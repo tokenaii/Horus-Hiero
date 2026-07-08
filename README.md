@@ -12,6 +12,22 @@
 
 **Horus-Hiero** is a specialized AI model dedicated to translating ancient Egyptian hieroglyphs into modern languages. Developed by TokenAI, it bridges the gap between the language of the Pharaohs and today's world.
 
+### 150+ Languages + Hieroglyphic Support
+
+<img src="media/middle%20east%20top%20models.png" alt="Middle East Top Models" width="100%"/>
+
+<br>
+
+### 150 Languages + Hieroglyphic
+
+<img src="media/languages.png" alt="Languages" width="100%"/>
+
+<br>
+
+### Example: Hieroglyph Translation
+
+<img src="media/mode%20lchat.png" alt="Translation Example" width="100%"/>
+
 ---
 
 ## Models
@@ -71,7 +87,7 @@ print(tokenizer.decode(outputs[0]))
 
 - [Hugging Face Collection](https://huggingface.co/collections/tokenaii/horus-hiero)
 - [TokenAI Organization](https://huggingface.co/tokenaii)
-- [TokenAI Website](https://tokenai.cloud)
+- [TokenAI Website](https://tokenai.llc)
 - [GitHub](https://github.com/tokenaii)
 
 ---
