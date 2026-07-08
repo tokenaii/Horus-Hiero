@@ -63,22 +63,63 @@
 
 ## Usage
 
-```python
-from transformers import AutoModelForCausalLM, AutoTokenizer
+We recommend using the **NeuralNode** framework for local inference. It simplifies loading and configuring models, handling memory optimization, and enabling reasoning modes with just a few lines of code.
 
-model = AutoModelForCausalLM.from_pretrained("tokenaii/Horus-Hiero-9B", torch_dtype="auto")
-tokenizer = AutoTokenizer.from_pretrained("tokenaii/Horus-Hiero-9B")
-
-prompt = "Translate this hieroglyph: ..."
-inputs = tokenizer(prompt, return_tensors="pt")
-outputs = model.generate(**inputs)
-print(tokenizer.decode(outputs[0]))
-```
-
-**With llama.cpp (GGUF):**
+### Installation
 
 ```bash
-./llama-cli -m Horus-Hiero-9B-Q4_K_M.gguf -p "Your prompt" -ngl 99
+pip install -U neuralnode
+```
+
+### Install dependencies based on your model format:
+- **For GGUF** (recommended for CPU/Low VRAM):
+  ```bash
+  pip install llama-cpp-python huggingface_hub
+  ```
+- **For Safetensors** (recommended for GPU/High VRAM):
+  ```bash
+  pip install torch accelerate safetensors
+  ```
+
+### Example: Running GGUF Model
+
+```python
+import neuralnode as nn
+
+# Load Horus Hiero Mini 4B GGUF
+model = nn.HorusModel(
+    "Horus-Hiero-Mini-4B-Q4_K_M.gguf",
+    device="cpu", # or "cuda" for GPU
+    n_gpu_layers=0, # -1 to offload all layers to GPU
+    n_ctx=1024,
+).load()
+
+response = model.chat(
+    [{"role": "user", "content": "Explain Horus Hiero briefly."}],
+    thinking=False, # Set to True to enable thinking mode
+)
+
+print(response.content)
+```
+
+### Example: Running Safetensors Model (GPU)
+
+```python
+import neuralnode as nn
+
+# Load Horus Hiero 9B Safetensors
+model = nn.HorusModel(
+    "Horus-Hiero-9B",
+    device="cuda",
+    torch_dtype="auto",
+    device_map="auto",
+).load()
+
+response = model.chat(
+    [{"role": "user", "content": "Translate this hieroglyph: ..."}]
+)
+
+print(response.content)
 ```
 
 ---
