@@ -63,6 +63,9 @@
 
 ## Usage
 
+### Generate Your Custom Integration Code
+Configure execution parameters (device, thinking mode, context length) and generate your custom integration script instantly using the [Interactive Horus Hiero Code Builder](https://tokenai.llc/projects/horus-hiero).
+
 We recommend using the **NeuralNode** framework for local inference. It simplifies loading and configuring models, handling memory optimization, and enabling reasoning modes with just a few lines of code.
 
 ### Installation
