@@ -12,7 +12,7 @@
 
 **Horus-Hiero** is a specialized AI model dedicated to translating ancient Egyptian hieroglyphs into modern languages. Developed by TokenAI, it bridges the gap between the language of the Pharaohs and today's world.
 
-### 150+ Languages + Hieroglyphic Support
+### Leading Model in the Middle East
 
 <img src="media/middle%20east%20top%20models.png" alt="Middle East Top Models" width="100%"/>
 
